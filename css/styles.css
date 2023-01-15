@@ -1,0 +1,301 @@
+body {
+    background-color: rgb(255, 255, 255);
+    /* color: white; */
+    margin: 0;
+    font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+
+/* ---------------------------------------- VIDEO DE FONDO ---------------------------------------- */
+
+
+/* video background */
+
+#background-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+@media (max-width: 1000px) {
+    #background-video {
+        display: none;
+    }
+    body {
+        background: url("../img/subscribe/black.jpg") no-repeat;
+        background-size: cover;
+    }
+    .desc-film {
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+    }
+}
+
+
+/* ---------------------------------------- NAVBAR ---------------------------------------- */
+
+.navMenu_logo li {
+    font-size: 17px;
+    list-style: none;
+    margin-left: 50px;
+}
+
+.desc-film {
+    margin-top: 14%;
+    margin-left: 1%;
+    margin-right: 44%;
+}
+
+.desc-film p {
+    font-size: 20px;
+}
+
+.btn-login {
+    background-color: #FF9900;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    border: 7px solid #FF9900;
+    border-radius: 7px;
+}
+
+.navMenu_navbar {
+    position: relative;
+    z-index: 15;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding: 0 1%;
+    height: 100px;
+}
+
+.navMenu_navbar .navMenu_logo {
+    float: left;
+    height: 100%;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+}
+
+.navMenu_navbar .navMenu_links {
+    float: right;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+/* ---------------------------------------- CONTENIDO DENTRO DE LA PAGINA ---------------------------------------- */
+
+.contenido {
+    padding: 1.5% 2.5% 10% 2.5%;
+    background-color: black;
+}
+
+.contenido h4 {
+    font-size: 32.5px;
+}
+
+
+/* ---------------------------------------- CATALOGO ---------------------------------------- */
+
+.four-column {
+    display: inline-block;
+    width: 22%;
+    padding: 2.5% 0% 1% 2%;
+}
+
+.four-column img {
+    width: 100%;
+}
+
+@media only screen and (max-width: 1200px) {
+    .four-column {
+        width: 30%;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .four-column {
+        width: 47%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .four-column {
+        width: 100%;
+    }
+}
+
+
+/* ---------------------------------------- TOP LIST ---------------------------------------- */
+
+.netflix-row {
+    overflow: scroll;
+    width: 100%;
+}
+
+.netflix-row--inner {
+    transition: 450ms transform;
+    font-size: 0;
+    white-space: nowrap;
+    margin: 70.3125px 0;
+    padding-bottom: 10px;
+}
+
+.netflix-row--item {
+    display: inline-block;
+    background: #808080;
+    width: 300px;
+    height: 140.625px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: 450ms all;
+    transform-origin: center left;
+}
+
+.netflix-row--item:last-child {
+    transform-origin: center right;
+}
+
+.netflix-row {
+    opacity: 1;
+}
+
+.netflix-row--inner:hover {
+    transform: translate3d(-62.5px, 0, 0);
+}
+
+.netflix-row--inner:hover .netflix-row--item {
+    opacity: 0.3;
+}
+
+.netflix-row--inner:hover .netflix-row--item:hover {
+    opacity: 1;
+    transform: scale(1.5);
+}
+
+.netflix-row--item:hover~.netflix-row--item {
+    transform: translate3d(125px, 0, 0);
+}
+
+
+/* ---------------------------------------- FOOTER ---------------------------------------- */
+
+#footer {
+    position: relative;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: #0e0e0e;
+}
+
+.footer-logo {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.footer-logo>a>img {
+    max-height: 80px;
+}
+
+.footer-follow {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.footer-follow li {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 13px;
+}
+
+.footer-follow li a {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 3px;
+    background-color: red;
+    color: #FFF;
+}
+
+.footer-copyright p {
+    text-align: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin: 0;
+    color: white;
+}
+
+
+/* ---------------------------------------- HOVER IMAGENES LIKE ---------------------------------------- */
+
+.container-catalogo {
+    position: relative;
+    width: 100%;
+}
+
+.container-catalogo a {
+    font-size: 30px;
+}
+
+.container-catalogo p {
+    font-size: 12.5px;
+    text-align: center;
+}
+
+.image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.container-catalogo:hover .image {
+    opacity: 0.3;
+}
+
+.container-catalogo:hover .middle {
+    opacity: 1;
+}
+
+.text {
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+}
