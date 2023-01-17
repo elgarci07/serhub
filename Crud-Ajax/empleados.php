@@ -1,5 +1,5 @@
 <?php
-// session_start();
+session_start();
 
 
   // echo $_SESSION['id_empleado'];
@@ -8,12 +8,11 @@
 include "../config/conexion.php";
 
 // Chequea si el usuario esta iniciado, en caso de que no vuelve a login ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-if (!empty($_SESSION['nombre'])) {
+if (empty($_SESSION['email_user'])) {
   // echo $_SESSION['nombre'];
   // echo "<script>location.href='../view/index.php'</script>";
   //  header('Location: ../view/index.php');
-
-  header('Location: ../view/login.php');
+  header('Location: ../view/public.php');
 }// Ha entrado si no salta
 
 
@@ -143,6 +142,14 @@ if (!empty($_SESSION['nombre'])) {
             </div>
         </div>
     </div>
+
+
+
+
+
+
+
+
     <script src="script.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script> -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

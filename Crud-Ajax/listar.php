@@ -1,6 +1,10 @@
 <?php
 
 require_once "../config/conexion.php";
+
+
+//PRIMERA TABLA
+
 if(empty($_POST['filtro'])){
 
     $consulta = $conexion->prepare("SELECT * FROM tbl_users");
@@ -60,5 +64,3 @@ if(empty($_POST['filtro'])){
 
 
 }
-
-    //4. Transformar consulta SQL en Array assoc.

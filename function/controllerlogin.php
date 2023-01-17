@@ -36,16 +36,29 @@ if (isset($_POST['boton']))
             }
             
             else{
-                // echo "no va";
-                // $_SESSION['nombre'] = $datos['email'];
-                // // echo $_SESSION['nombre'];
-                // // $_SESSION['id_empleado'] = $username;
-                // $_SESSION['id_empleado'] = $datos['id_empleado'];
-                // $_SESSION['cargo'] = $datos['fk_cargo_empleado'];
-                // print_r($_SESSION['id_empleado']);
-                // die();
-                // print_r($username);
-                // echo "hola";
+                session_start();
+
+                if (empty($datos)) {
+                    header('Location: ../view/login.php');
+                    // echo "no chuuta";
+                    
+    
+                }
+                
+                else{
+                    // echo "no va";
+                    $_SESSION['email_user'] = $datos['email_user'];
+                    // echo $_SESSION['nombre'];
+                    // $_SESSION['id_empleado'] = $username;
+                    $_SESSION['id_user'] = $datos['id_user'];
+                    
+                    // print_r($_SESSION['id_empleado']);
+                    // die();
+                    // print_r($username);
+                    // echo "hola";
+                    
+                    header('Location: ../view/index.php');
+                }
                 
                 header('Location: ../view/principal.php');
             }
