@@ -155,7 +155,7 @@ if (empty($_SESSION['email_user'])) {
 
   <!-- BOTON AÑADIR RESERVA:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
   
-  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Reservar</button>
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"></button>
   <br>
             
 <!-- The Modal -->

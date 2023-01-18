@@ -52,13 +52,37 @@
                 </ul>
             </div>
         </div>
+
+<!-- CONSULTA FOREACH FOTOS -->
+
+<?php
+
+include_once "../config/conexion.php";
+        
+        $sentencia = $conexion->query("SELECT * FROM tbl_videos;");
+        $videos = $sentencia->fetchAll(PDO::FETCH_OBJ);
+        // echo var_dump($videos);
+        ?>
+
+<!-- FOREACH FOTOS -->
+
         <div class="catalogo">
             <h4>Terrorificas</h4>
             <div class="four-column">
                 <div class="container-catalogo">
-                    <img src="../img/top-list/pelicula1.jpg" alt="Avatar" class="image" style="width:100%">
-                    <p>Hola</p>
-                    <div class="middle">
+                <div class="catalogo">
+            <h4>Conoce nuestro catalogo</h4>
+            <?php 
+            foreach ($videos as $filmacion) {?>
+            <div class="four-column">
+                <img src="../img/peliculas/<?php echo $filmacion->foto_video;?>" alt="no se veee">
+                <p><?php echo $filmacion->nom_video;?></p>
+            </div>
+            <?php
+            }
+            ?>
+        </div>
+                    <!-- <div class="middle">
                         <div class="text">
                             <a href="#"><i class="fa-solid fa-thumbs-up"></i></a>
                         </div>
@@ -187,7 +211,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
     <footer id="footer">

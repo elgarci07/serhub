@@ -42,7 +42,10 @@ function Eliminar(id_user) {
     ajax.onload = function() {
         if (ajax.status == 200) {
             if (ajax.responseText == "OK") {
-                alert('Elemento eliminado con id: ' + id_user);
+                Swal.fire(
+                    'Eliminado!',
+                    '¡Oye, que se ha eliminado con éxito!',
+                    'success')
                 listar('');
             }
         } else {
