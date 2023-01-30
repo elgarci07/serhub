@@ -20,6 +20,7 @@ if(empty($_POST['filtro'])){
                 <td>" . $data['pass_user'] . "</td>
                 <td>" . $data['nom_user'] . "</td>
                 <td>" . $data['user_log'] . "</td>
+                <td>" . $data['user_admin'] . "</td>
                 
                 <td>
                 <button type='button' class='btn btn-success' onclick=aceptar('" . $data['id_user'] . "')>Aceptar</button>

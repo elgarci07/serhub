@@ -74,15 +74,15 @@ function crear() {
             console.log(ajax.responseText);
             if (ajax.responseText == "OK") {
                 Swal.fire(
-                    'Reservado!',
-                    'Tu reserva a sido creada con exito!',
+                    '¡Usuario Creado!',
+                    'El usuarie ha sido creade con éxito!',
                     'success')
                 listar('');
                 // console.log('hola');
             }
         } else {
             Swal.fire(
-                    'Algo a salido!',
+                    'Algo a salido maal!',
                     'Comprueba que todos los campos sean correctos!',
                     'error')
                 // console.log('adios');

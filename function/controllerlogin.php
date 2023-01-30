@@ -1,8 +1,18 @@
 <?php
+session_start();
+
+if (empty($_SESSION['email_user'])) {
+    // echo $_SESSION['nombre'];
+    // echo "<script>location.href='../view/index.php'</script>";
+    //  header('Location: ../view/index.php');
+    header('Location: ../view/login.php');
+
+  }// Ha entrado si no salta
+
 include "../config/conexion.php";
 
 // Llamar a pagina
-$entrada_valida = true;
+// $entrada_valida = true;
 // require_once '../view/login.php';
 // echo "holis";
 // On submit ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -24,43 +34,25 @@ if (isset($_POST['boton']))
 
             $datos = $sentencia->fetch(PDO::FETCH_ASSOC);
             var_dump($datos); 
-        //var_dump($datos);
+            // die();
+      
         // echo $datos;
-            session_start();
+            
+
+          
 
             if (empty($datos)) {
                 header('Location: ../view/login.php');
                 // echo "no chuuta";
             }elseif($datos['user_log'] == 0){
                 header('Location: ../view/revision.php');
-            }
-            
-            else{
-                session_start();
-
-                if (empty($datos)) {
-                    header('Location: ../view/login.php');
-                    // echo "no chuuta";
-                    
-    
-                }
-                
-                else{
-                    // echo "no va";
-                    $_SESSION['email_user'] = $datos['email_user'];
-                    // echo $_SESSION['nombre'];
-                    // $_SESSION['id_empleado'] = $username;
-                    $_SESSION['id_user'] = $datos['id_user'];
-                    
-                    // print_r($_SESSION['id_empleado']);
-                    // die();
-                    // print_r($username);
-                    // echo "hola";
-                    
-                    header('Location: ../view/index.php');
-                }
-                
+            }elseif($datos['user_log'] == 1){
+                $_SESSION['email_user'] = $datos['email_user'];
                 header('Location: ../view/principal.php');
+                
+            }else{
+                // session_start();
+                    header('Location: ../view/login.php');
             }
 }
 

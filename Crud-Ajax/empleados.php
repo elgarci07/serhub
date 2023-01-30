@@ -68,58 +68,6 @@ if (empty($_SESSION['email_user'])) {
 <!-- modal Editar :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
 
 
-            
-<!-- The Modal -->
-<div class="modal" id="myModalEdit">
-  <div class="modal-dialog">
-    <div class="modal-content">
-
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">Crear un empleado:</h4>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-
-      <!-- Modal body -->
-    <div class="modal-body">
-      <form id="editempleado">
-      <!-- method="POST" action="../reserva/crearempleado.php" -->
-      <input type="hidden" name="id_empleado" id="id_empleado">
-          <label for="mesa">Nombre:</label><br>
-          <input type="text" id="nombre" name="nombre"><br>
-          <label for="mesa">Apellido:</label><br>
-          <input type="text" id="apellido" name="apellido"><br>
-          <label for="dni">Dni:</label><br>
-          <input type="text" id="dni" name="dni">
-          <br>
-          <p>Cargo:</p>
-        <select name="cargo" id="cargo">
-            <option value="1">Camarero</option>
-            <option value="2">Mantenimiento</option>
-            <option value="3">Admin</option>
-        </select>
-        <br>
-        <label for="mail">Mail:</label><br>
-          <input type="text" id="mail" name="mail">
-          <br>
-          <label for="password">Contraseña</label><br>
-          <input type="text" id="password" name="password">
-          <br>
-          <br>
-        <input type="submit" class="btn btn-success" data-bs-dismiss="modal">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-      </form> 
-    </div>
-
-      <!-- Modal footer -->
-      <!-- <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-      </div> -->
-
-    </div>
-  </div>
-</div>
-
 
 <!-- modal Crear :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
 
@@ -134,6 +82,8 @@ if (empty($_SESSION['email_user'])) {
                           <th>Password</th>
                           <th>Nombre</th>
                           <th>Aceptado</th>
+                          <th>Admin</th>
+                          <th>Acciones</th>
                           <th></th>
                         </tr>
                     </thead>
@@ -142,12 +92,6 @@ if (empty($_SESSION['email_user'])) {
             </div>
         </div>
     </div>
-
-
-
-
-
-
 
 
     <script src="script.js"></script>

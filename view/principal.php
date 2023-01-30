@@ -1,19 +1,19 @@
 <?php
 
-session_start();
+
 
 
   // echo $_SESSION['id_empleado'];
   
 
   include "../config/conexion.php";
-
+//   include "../config/controllerlogin.php";
+  session_start();
   // Chequea si el usuario esta iniciado, en caso de que no vuelve a login ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
   if (empty($_SESSION['email_user'])) {
     // echo $_SESSION['nombre'];
     // echo "<script>location.href='../view/index.php'</script>";
     //  header('Location: ../view/index.php');
-    
     header('Location: ../view/login.php');
 
   }// Ha entrado si no salta
@@ -42,11 +42,18 @@ session_start();
     <nav class="navMenu_navbar">
         <div class="navMenu_logo">
             <a href=""><img src="../img/logo_nobackground.png" width="200px" alt="ph"></a>
+            
+            <?php if ($_SESSION['user_admin'] == 1 ) { ?> 
             <li><a href="../view/principal.php">Inicio</a></li>
             <li><a href="../view/index.php">Peliculas</a></li>
             <li><a href="../Crud-Ajax/empleados.php">Empleados</a></li>
             <li><a href="#">Destacadas</a></li>
-            <li><a href="#">Destacadas</a></li>
+ 
+            <?php } ?>
+            
+            
+
+
         </div>
         <ul class="navMenu_links">
             <button type="button" styles="color:black;" class="btn-login"><a href="../function/cerrarlogin.php">Cerrar sesión</a></button>
