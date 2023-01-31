@@ -12,8 +12,19 @@
 <body>
 <form action="../function/controllerregistro.php" method="post"  onsubmit="return rta();">
 
+<nav class="navMenu_navbar">
+        <div class="navMenu_logo">
+            <a href=""><img src="../img/logo_nobackground.png" width="200px" alt="ph"></a>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#top5">Las 5 mas vistas</a></li>
 
-<h1 class="login__title">Ser un hubber</h1>
+        </div>
+        <ul class="navMenu_links">
+            <button type="button" class="btn-login"><a href="../view/login.php">Iniciar sesión</a></button>
+            <button type="button" class="btn-login"><a href="../view/registro.php">Registrate</a></button>
+        </ul>
+    </nav>
+<h1 class="login__title">Ser un serhubber</h1>
     <div class="mb-3">
         <input  type="text" class="login__group__input" name="nombre" aria-describedby="emailHelp" id="email" placeholder="Nombre">
     </div>

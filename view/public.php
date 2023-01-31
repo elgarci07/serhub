@@ -76,11 +76,10 @@ $videostop5 = $sentenciatop5->fetchAll(PDO::FETCH_OBJ);
 
 <!-- FOREACH FOTOS -->
 
-        <div class="catalogo">
-            <h4>Terrorificas</h4>
-            <div class="four-column">
-                <div class="container-catalogo">
-                <div class="catalogo">
+    <div class="catalogo">
+        <div class="four-column">
+            <div class="container-catalogo">
+            <div class="catalogo">
             <h4>Películas disponibles (mas gustadas)</h4>
             <?php 
             foreach ($videos as $filmacion) {?>
@@ -229,12 +228,12 @@ $videostop5 = $sentenciatop5->fetchAll(PDO::FETCH_OBJ);
             <div class="row">
                 <div class="col-md-12">
                     <ul class="footer-follow">
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                        <li><a href="https://www.youtube.com/watch?v=pI-rXgCzPoo"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://www.youtube.com/watch?v=pI-rXgCzPoo"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="https://www.youtube.com/watch?v=pI-rXgCzPoo"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="https://www.youtube.com/watch?v=pI-rXgCzPoo"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="https://www.youtube.com/watch?v=pI-rXgCzPoo"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="https://www.youtube.com/watch?v=pI-rXgCzPoo"><i class="fa fa-youtube"></i></a></li>
                     </ul>
                     <div class="footer-copyright">
                         <p>Copyright © 2022-2023. All Rights Reserved. <a href="index.html" target="_blank">SerHUB, your quality porn</a></p>
