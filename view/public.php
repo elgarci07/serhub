@@ -13,6 +13,27 @@
 </head>
 
 <body>
+
+<!-- CONSULTA FOREACH FOTOS -->
+
+<?php
+
+include_once "../config/conexion.php";
+        
+//Sentencia todas las fotos
+        $sentencia = $conexion->query("SELECT * FROM tbl_videos;");
+        $videos = $sentencia->fetchAll(PDO::FETCH_OBJ);
+        // echo var_dump($videos);
+
+//Sentencia de las mas gustadas
+$sentenciatop5 = $conexion->query("SELECT * FROM tbl_videos;");
+$videostop5 = $sentenciatop5->fetchAll(PDO::FETCH_OBJ);
+
+
+        ?>
+
+        
+
     <video id="background-video" autoplay loop muted poster="../img/subscribe/black.jpg">
             <source src="../img/publicvideo.mp4" type="video/mp4">
           </video>
@@ -20,10 +41,8 @@
         <div class="navMenu_logo">
             <a href=""><img src="../img/logo_nobackground.png" width="200px" alt="ph"></a>
             <li><a href="#">Inicio</a></li>
-            <li><a href="#">Destacadas</a></li>
-            <li><a href="#">Destacadas</a></li>
-            <li><a href="#">Destacadas</a></li>
-            <li><a href="#">Destacadas</a></li>
+            <li><a href="#top5">Las 5 mas vistas</a></li>
+
         </div>
         <ul class="navMenu_links">
             <button type="button" class="btn-login"><a href="../view/login.php">Iniciar sesión</a></button>
@@ -32,37 +51,28 @@
     </nav>
     <div class="desc-film">
         <img width="250px" src="../img/subscribe/logo-film.png" alt="">
-        <p>Los mejores videos</p>
+        <!-- <p>Los mejores videos</p> -->
     </div>
     <div class="contenido">
         <div class="top-list">
-            <h4>Tendencias en SerHub</h4>
+            <h4 id=top5>Las 5 más gustadas</h4>
             <div class="netflix-row">
                 <ul class="netflix-row--inner">
-                    <li class="netflix-row--item"><img width="100%" src="../img/top-list/pelicula1.jpg" alt=""></li>
-                    <li class="netflix-row--item"><img width="100%" src="../img/top-list/pelicula2.png" alt=""></li>
-                    <li class="netflix-row--item"><img width="100%" src="../img/top-list/pelicula3.png" alt=""></li>
-                    <li class="netflix-row--item"><img width="100%" src="../img/top-list/pelicula4.png" alt=""></li>
-                    <li class="netflix-row--item"><img width="100%" src="../img/top-list/pelicula5.png" alt=""></li>
-                    <li class="netflix-row--item"><img width="100%" src="../img/top-list/pelicula1.jpg" alt=""></li>
-                    <li class="netflix-row--item"><img width="100%" src="../img/top-list/pelicula2.png" alt=""></li>
-                    <li class="netflix-row--item"><img width="100%" src="../img/top-list/pelicula3.png" alt=""></li>
-                    <li class="netflix-row--item"><img width="100%" src="../img/top-list/pelicula4.png" alt=""></li>
-                    <li class="netflix-row--item"><img width="100%" src="../img/top-list/pelicula5.png" alt=""></li>
+                    <!-- <li class="netflix-row--item"><img width="100%" src="../img/top-list/pelicula1.jpg" alt=""></li> -->
+                    <?php 
+            foreach ($videos as $filmacion) {?>
+            <div class="netflix-row--item">
+                <img width="100%" src="../img/peliculas/<?php echo $filmacion->foto_video;?>" alt="no se veee">
+                <p><?php echo $filmacion->nom_video;?></p>
+            </div>
+            <?php
+            }
+            ?>
                 </ul>
             </div>
         </div>
 
-<!-- CONSULTA FOREACH FOTOS -->
 
-<?php
-
-include_once "../config/conexion.php";
-        
-        $sentencia = $conexion->query("SELECT * FROM tbl_videos;");
-        $videos = $sentencia->fetchAll(PDO::FETCH_OBJ);
-        // echo var_dump($videos);
-        ?>
 
 <!-- FOREACH FOTOS -->
 
@@ -71,7 +81,7 @@ include_once "../config/conexion.php";
             <div class="four-column">
                 <div class="container-catalogo">
                 <div class="catalogo">
-            <h4>Conoce nuestro catalogo</h4>
+            <h4>Películas disponibles (mas gustadas)</h4>
             <?php 
             foreach ($videos as $filmacion) {?>
             <div class="four-column">

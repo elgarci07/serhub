@@ -45,10 +45,8 @@ if (empty($_SESSION['email_user'])) {
         //if (!isset($_SESSION['Admin'])){
           ?>
                     <div class="p-2 bd-highlight text-white" style="font-size:20px"><a style="text-decoration: none; color: white;" href="../view/principal.php">Inicio</a></div>
-
-          <div class="p-2 bd-highlight text-white" style="font-size:20px"><a style="text-decoration: none; color: white;" href="../view/index.php">Reservas</a></div>
-          <div class="p-2 bd-highlight text-white" style="font-size:20px"><a style="text-decoration: none; color: white;" href="../Crud-Ajax/empleados.php">Usuarios</a></div>
-                    <
+                    <div class="p-2 bd-highlight text-white" style="font-size:20px"><a style="text-decoration: none; color: white;" href="../Crud-Ajax/empleados.php">Usuarios</a></div>
+                    
 
           <?php
         //}     
@@ -77,7 +75,7 @@ if (empty($_SESSION['email_user'])) {
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h3><i class="fa-solid fa-calendar"></i> Reservas</h3>
+                <h3><i class="fa-solid fa-calendar"></i> Peliculas</h3>
                 <br>
 
 
@@ -92,71 +90,6 @@ if (empty($_SESSION['email_user'])) {
   
 
   
-
-<!-- modal Editar :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->    
-
-<!-- The Modal -->
- <div class="modal" id="myModalEdit">
-  <div class="modal-dialog">
-    <div class="modal-content"> 
-
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">Reservar una mesa:</h4>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-
-      <!-- Modal body -->
-    <div class="modal-body">
-    <form id="editreserva">
-    <input type="hidden" name="id_registro" id="id_registro">
-    <label for="cliente">Cliente:</label>
-          <input type="text" id="cliente" name="cliente">
-          <br><label for="id_mesa">Mesa:</label><br>
-          <input type="number" id="id_mesa" name="id_mesa">
-          <br><br>
-          
-            <!-- <select name="id_mesa" id="id_mesa">
-              <?php
-                //  $query = $conexion -> prepare ("SELECT * FROM tbl_mesa");
-                //  $query -> execute();
-              
-                //  $resultado = $query->fetchAll(PDO::FETCH_ASSOC);
-                //    foreach ($resultado as $valores) {
-                      
-                //   echo '<option value=" Mesa'.$valores["id_mesa"].'">'.$valores["num_mesa"].'</option>';
-                //  }
-              ?>
-            </select> -->
-            <br>
-          
-          <label for="comensales">Comensales:</label><br>
-          <input type="number" id="comensales" name="comensales" min="1" max="20">
-          <br>
-      
-      <br>
-      <input type="date" id="fecha" name="fecha" value="2022-11-27" min="2022-11-27" max="2023-12-30">
-      <br>
-      <select id="hora" name="hora">
-            <option value="13:00:00">13:00</option>
-            <option value="14:00:00">14:00</option>
-            <option value="15:00:00">15:00</option>
-            <option value="20:00:00">20:00</option>
-            <option value="21:00:00">21:00</option>
-            <option value="22:00:00">22:00</option>
-      </select>
-      <br>
-        <input type="submit" class="btn btn-success" data-bs-dismiss="modal">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-      </form> 
-    </div>
-
-    
-
-    </div>
-  </div>
-</div> 
-
 
               <!-- TABLA -->
                 <table class="table">

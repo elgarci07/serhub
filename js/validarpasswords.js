@@ -1,33 +1,51 @@
-function validarPasswd() {
+function rta() {
+    alert('hola');
+    user = document.getElementById('mail').value
+    pass = document.getElementById('p1').value
 
-    var p1 = document.getElementById("password").value;
-    var p2 = document.getElementById("password2").value;
-    var espacios = false;
-    var cont = 0;
 
-    // Este bucle recorre la cadena para comprobar
-    // que no todo son espacios
-    while (!espacios && (cont < p1.length)) {
-        if (p1.charAt(cont) == " ")
-            espacios = true;
-        cont++;
-    }
+    if (user == '' && pass == '') {
+        //alert('hola');
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'EMAIL Y CONTRASEÑA OBLIGATORIOS',
+        })
+        return false;
 
-    if (espacios) {
-        alert("La contraseña no puede contener espacios en blanco");
+    } else if (user == '') {
+        //alert("EMAIL OBLIGATORIO");
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'EMAIL OBLIGATORIO',
+        })
+        return false;
+    } else if (pass == '') {
+        // alert("CONTRASEÑA OBLIGATORIA");
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'CONTRASEÑA OBLIGATORIA',
+        })
+        return false;
+    } else if (pass.length < 8) {
+        //alert("LA CONTRASEÑA TIENE QUE TENER 8 CARACTERES");
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'LA CONTRASEÑA TIENE QUE TENER 8 CARACTERES',
+        })
         return false;
     }
-
-    if (p1.length == 0 || p2.length == 0) {
-        alert("Los campos de la password no pueden quedar vacios");
+    if (pass.length > 8) {
+        Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'LA CONTRASEÑA TIENE QUE TENER 8 CARACTERES',
+            })
+            // alert("LA CONTRASEÑA TIENE QUE TENER 8 CARACTERES");
         return false;
     }
-
-    if (p1 != p2) {
-        alert("Las passwords deben de coincidir");
-        return false;
-    } else {
-        alert("Todo esta correcto");
-        return true;
-    }
+    return true
 }

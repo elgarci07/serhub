@@ -1,13 +1,13 @@
 <?php
-session_start();
 
-if (empty($_SESSION['email_user'])) {
+session_start();
+// if (empty($_SESSION['email_user'])) {
     // echo $_SESSION['nombre'];
     // echo "<script>location.href='../view/index.php'</script>";
     //  header('Location: ../view/index.php');
-    header('Location: ../view/login.php');
+    // header('Location: ../view/login.php');
 
-  }// Ha entrado si no salta
+//   }// Ha entrado si no salta
 
 include "../config/conexion.php";
 
@@ -48,6 +48,8 @@ if (isset($_POST['boton']))
                 header('Location: ../view/revision.php');
             }elseif($datos['user_log'] == 1){
                 $_SESSION['email_user'] = $datos['email_user'];
+                $_SESSION['user_admin'] = $datos['user_admin'];
+                
                 header('Location: ../view/principal.php');
                 
             }else{

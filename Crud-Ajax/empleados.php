@@ -37,7 +37,7 @@ if (empty($_SESSION['email_user'])) {
         <!--Navbar ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-->
         <nav class="d-flex bd-highlight mb-5 navbar bg-dark" style="padding: 0.5% 7.5%;">
         <div class="p-2 bd-highlight text-white" style="font-size:20px"><a style="text-decoration: none; color: white;" href="../view/principal.php">Inicio</a></div>
-          <div class="p-2 bd-highlight text-white" style="font-size:20px"><a style="text-decoration: none; color: white;" href="../view/pelisadmin.php">Gestor Peliculas</a></div>
+          <div class="p-2 bd-highlight text-white" style="font-size:20px"><a style="text-decoration: none; color: white;" href="../view/index.php">Gestor Peliculas</a></div>
             
           <div class="ms-auto p-2 bd-highlight text-white">
                 <form method='post' action="../function/cerrarlogin.php">

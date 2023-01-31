@@ -9,24 +9,6 @@
 
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<!-- <a class="logo" href="../img/logo_nobackground.png" target="_blank"></a>
-<form action="../function/controllerlogin.php" method="post">
-<div class="login">
-  <h1 class="login__title">Inicia Sesión</h1>
-  <div class="login__group">
-    <input class="login__group__input" type="text" required="true"/>
-    <label class="login__group__label">Email</label>
-  </div>
-  <div class="login__group">
-    <input class="login__group__input" type="password" required="true"/>
-    <label class="login__group__label">Password</label>
-  </div>
-  <button class="login__sign-in" type="submit">Sign In</button> -->
-
-  <!-- </div>  
-</form> -->
- 
 
 <form onsubmit="return validarEmail()" method="post" action="../function/controllerlogin.php">
 <h1 class="login__title">Inicia Sesión</h1>
@@ -36,16 +18,15 @@
     </div>
 
     <div class="mb-3">
-        
-        <input type="password" class="login__group__input" name="pwd" placeholder="Password">
+        <input type="password" class="login__group__input" name="pwd" placeholder="Password" id="p1">
     </div>
 
-    <button  type="submit" class="login__sign-in" name="boton" id="password">Iniciar sesión</button>
+    <button  type="submit" class="login__sign-in" name="boton" >Iniciar sesión</button>
     <!-- <button onclick="return validaFormulario()" type="submit" class="btn btn-primary" name="boton" id="password">Iniciar sesión</button> -->
   <p id="emailp"></p>
 </form>
 
-
+<!-- <script>"../js/validarpasswords.js"</script> -->
 <!-- partial -->
   
 </body>

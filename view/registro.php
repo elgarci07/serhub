@@ -1,28 +1,40 @@
-
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en" >
 <head>
-<meta charset="utf-8">
-<title>Formulario de Registro SCIII</title>
-<link href="estilos.css" rel="stylesheet" type="text/css">
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="shortcut icon" href="../img/logov.png" />
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>"../js/validarpasswords.js"</script>
 </head>
- 
 <body>
-<div class="group">
-  <form action="../function/controllerregistro.php" method="POST">
-  <h2><em>Formulario de Registro</em></h2>  
-     
-      <label for="nombre">Nombre <span><em>(requerido)</em></span></label>
-      <input type="text" name="nombre" class="form-input" required/>   
-      
-      <label for="apellido">Email <span><em>(requerido)</em></span></label>
-      <input type="email" name="email" class="form-input" required/>         
-      
-      <label for="email">Password <span><em>(requerido)</em></span></label>
-      <input type="password" name="password" class="form-input" />
-     <center> <input class="form-btn" name="submit" type="submit" value="Suscribirse" /></center>
-    </p>
+<form action="../function/controllerregistro.php" method="post"  onsubmit="return rta();">
+
+
+<h1 class="login__title">Ser un hubber</h1>
+    <div class="mb-3">
+        <input  type="text" class="login__group__input" name="nombre" aria-describedby="emailHelp" id="email" placeholder="Nombre">
+    </div>
+
+    <div class="mb-3">
+        <input type="email" class="login__group__input" name="email" placeholder="Email" id="mail">
+    </div>
+
+    <div class="mb-3">
+        <input type="password" class="login__group__input" name="pwd" placeholder="Password" id="p1">
+    </div>
+
+
+    <button  type="submit" class="login__sign-in" name="boton" >Registrate</button>
+    <!-- <button onclick="return validaFormulario()" type="submit" class="btn btn-primary" name="boton" id="password">Iniciar sesión</button> -->
+  <p id="emailp"></p>
   </form>
-</div>
+
+<script>"../js/validarpasswords.js"</script>
+
+<!-- partial -->
+  
 </body>
 </html>

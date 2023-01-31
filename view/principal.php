@@ -17,8 +17,8 @@
     header('Location: ../view/login.php');
 
   }// Ha entrado si no salta
-  
-  
+  $admin = $_SESSION['user_admin'];
+//   echo $admin;
 ?>
 
 <!DOCTYPE html>
@@ -43,13 +43,16 @@
         <div class="navMenu_logo">
             <a href=""><img src="../img/logo_nobackground.png" width="200px" alt="ph"></a>
             
-            <?php if ($_SESSION['user_admin'] == 1 ) { ?> 
+           
+           <?php if ($_SESSION['user_admin']==1) { ?> 
+
             <li><a href="../view/principal.php">Inicio</a></li>
             <li><a href="../view/index.php">Peliculas</a></li>
             <li><a href="../Crud-Ajax/empleados.php">Empleados</a></li>
             <li><a href="#">Destacadas</a></li>
- 
-            <?php } ?>
+            <?php }else{ ?>
+                <li><a href="#">Destacadas</a></li>
+            <?php  }?>
             
             
 
@@ -127,7 +130,7 @@
                     </div>
                 </div>
             </div>
-            <h4>Comedia</h4>
+            <h4>Peliculas</h4>
             <div class="four-column">
                 <div class="container-catalogo">
                     <img src="../img/top-list/pelicula1.jpg" alt="Avatar" class="image" style="width:100%">
@@ -172,51 +175,7 @@
                     </div>
                 </div>
             </div>
-            <h4>Romanticas</h4>
-            <div class="four-column">
-                <div class="container-catalogo">
-                    <img src="../img/top-list/pelicula1.jpg" alt="Avatar" class="image" style="width:100%">
-                    <p>Hola</p>
-                    <div class="middle">
-                        <div class="text">
-                            <a href="#"><i class="fa-solid fa-thumbs-up"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="four-column">
-                <div class="container-catalogo">
-                    <img src="../img/top-list/pelicula1.jpg" alt="Avatar" class="image" style="width:100%">
-                    <p>Hola</p>
-                    <div class="middle">
-                        <div class="text">
-                            <a href="#"><i class="fa-solid fa-thumbs-up"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="four-column">
-                <div class="container-catalogo">
-                    <img src="../img/top-list/pelicula1.jpg" alt="Avatar" class="image" style="width:100%">
-                    <p>Hola</p>
-                    <div class="middle">
-                        <div class="text">
-                            <a href="#"><i class="fa-solid fa-thumbs-up"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="four-column">
-                <div class="container-catalogo">
-                    <img src="../img/top-list/pelicula1.jpg" alt="Avatar" class="image" style="width:100%">
-                    <p>Hola</p>
-                    <div class="middle">
-                        <div class="text">
-                            <a href="#"><i class="fa-solid fa-thumbs-up"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </div>
     <footer id="footer">
