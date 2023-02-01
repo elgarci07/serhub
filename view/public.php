@@ -26,7 +26,7 @@ include_once "../config/conexion.php";
         // echo var_dump($videos);
 
 //Sentencia de las mas gustadas
-$sentenciatop5 = $conexion->query("SELECT * FROM tbl_videos;");
+$sentenciatop5 = $conexion->query("SELECT * FROM tbl_videos ORDER BY nom_video desc;");
 $videostop5 = $sentenciatop5->fetchAll(PDO::FETCH_OBJ);
 
 

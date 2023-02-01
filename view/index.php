@@ -14,9 +14,18 @@ if (empty($_SESSION['email_user'])) {
   //  header('Location: ../view/index.php');
 
   header('Location: ../view/public.php');
+ 
 }// Ha entrado si no salta
 
-
+// Chequea si el usuario es admin, en caso de que no vuelve a login ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+if ($_SESSION['user_admin']==0) {
+    // echo $_SESSION['nombre'];
+    // echo "<script>location.href='../view/index.php'</script>";
+    //  header('Location: ../view/index.php');
+  
+    header('Location: ../view/principal.php');
+   
+  }
 
 ?>
 
@@ -75,7 +84,7 @@ if (empty($_SESSION['email_user'])) {
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h3><i class="fa-solid fa-calendar"></i> Peliculas</h3>
+                <h3><i class="fa-solid fa-calendar"></i> Películas</h3>
                 <br>
 
 
